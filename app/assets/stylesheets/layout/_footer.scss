@@ -1,1 +1,44 @@
-// Your footer style
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 150px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background-color: rgb(230, 230, 230);
+  text-align: center;
+}
+
+.container{
+  text-align: left;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.fa-twitter {
+    color: #4099FF;
+}
+
+.fa-facebook {
+    color: #3B5998;
+}
+
+
+.fa {
+    opacity: 0.7;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.fa:hover{
+    opacity: 1;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
