@@ -20,8 +20,12 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 50px;
+.navbar-wagon-brand h3 {
+  color: #0B3954;
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+  }
 }
 
 /* Navbar right section (with form, links, button) */
@@ -52,16 +56,16 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
+  border-radius: 10px;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: #FF5A5F;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid #FF5A5F;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
+  background: #C81D25;
   border-color: #ac2626;
 }
 
