@@ -14,7 +14,7 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @Tools = Tool.all
+    @tools = Tool.all
   end
 
   def update
