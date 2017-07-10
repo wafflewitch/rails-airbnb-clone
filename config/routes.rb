@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   devise_for :users
 
   resources :tools, only: [ :new, :show, :index, :edit ]
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [ :new, :show, :index ]
 
+  devise_scope :user do
+    get '/profile', to: 'devise/registrations#edit'
+  end
 
   root to: 'pages#home'
 
