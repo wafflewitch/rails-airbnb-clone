@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [ :new, :show, :index ]
 
-  devise_scope :user do
-    get '/profile', to: 'devise/registrations#edit'
-  end
+  get '/profile', to: 'pages#profile'
 
   root to: 'pages#home'
 
