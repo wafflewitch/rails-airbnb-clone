@@ -7,7 +7,7 @@ class CreateTools < ActiveRecord::Migration[5.0]
       t.integer :price
       t.boolean :available
       t.string :photo
-      t.references :user, foreign_key: true
+      # t.references :user, foreign_key: true
 
       t.timestamps
     end
