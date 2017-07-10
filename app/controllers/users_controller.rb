@@ -40,3 +40,5 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
+
+# @user = User.new(first_name: "Jessica", last_name: "Waffles", address: "30 Cat bouevard", email: "waffles@cat.com")
