@@ -11,14 +11,15 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 120px;
-  background-color: rgb(230, 230, 230);
+  height: 90px;
+  background-color: rgb(240, 240, 240);
   text-align: center;
+  padding-left: 30px;
 }
 
-.container{
+.footer-icons {
   text-align: left;
-  margin-top: 40px;
+  margin-top: 25px;
   width: 100%;
 }
 
@@ -32,8 +33,11 @@ body {
 
 
 .fa {
+    margin-left: 10px;
     opacity: 0.7;
+    font-size: 30px;
     transition: 1s;
+    padding: 10px;
     -webkit-transition: 1s;
 }
 
