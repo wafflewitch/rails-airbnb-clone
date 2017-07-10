@@ -1,33 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'reviews/new'
 
-  get 'reviews/show'
+  resources :tools, only: [ :new, :show, :index, :edit ]
 
-  get 'reviews/index'
+  resources :bookings, only: [ :new, :show, :index, :edit ]
 
-  get 'bookings/index'
+  resources :reviews, only: [ :new, :show, :index ]
 
-  get 'bookings/new'
-
-  get 'bookings/edit'
-
-  get 'bookings/show'
-
-  get 'tools/new'
-
-  get 'tools/edit'
-
-  get 'tools/show'
-
-  get 'tools/index'
-
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/show'
 
   root to: 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
