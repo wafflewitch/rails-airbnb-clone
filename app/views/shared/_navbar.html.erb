@@ -9,10 +9,10 @@
 
 
     <!-- Log in Link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Log In</a>
+    <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Sign Up</a>
+    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
