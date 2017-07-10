@@ -2,3 +2,43 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.wrapper-categories {
+  margin: 50px;
+  div.container h4 {
+    font-size: 20px;
+  }
+}
+
+.card-home {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+}
+
+.card-description-home {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description-home h2 {
+  font-size: 24px;
+
+}
+.card-description-home p {
+  font-size: 13px;
+}
+.card-link-home {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link-home:hover {
+  opacity: 0.1;
+}
