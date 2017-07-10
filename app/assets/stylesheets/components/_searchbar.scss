@@ -1,9 +1,27 @@
 input {
   padding: 7px;
+  width: 400px;
 }
 
 .search-button {
   margin-bottom: 3px;
   font-size: 18px;
   font-weight: lighter;
+  border-radius: 4px;
+  width: 100px;
+  padding: none;
+  margin: none;
+}
+
+.search-form-home{
+  height: 30px;
+  margin: none;
+}
+
+.search-by-tool-input{
+  height: 43px;
+}
+
+.search-by-location-input{
+  height: 43px;
 }
