@@ -2,3 +2,11 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.wrapper-categories {
+  margin: 50px;
+  div.container h4 {
+    font-size: 24px;
+    font-weight: lighter;
+  }
+}
+
