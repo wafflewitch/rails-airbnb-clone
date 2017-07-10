@@ -33,10 +33,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :address, :bio, :photo, :email_address )
+    params.require(:user).permit(:first_name, :last_name, :address, :bio, :photo, :email)
   end
 
   def set_user
     @user = User.find(params[:id])
   end
 end
+
+# @user = User.new(first_name: "Jessica", last_name: "Waffles", address: "30 Cat bouevard", email: "waffles@cat.com")
