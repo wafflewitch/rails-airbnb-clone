@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
   before_action :set_booking, only: [ :new, :create, :index ]
   before_action :set_review, only: [ :show ]
 

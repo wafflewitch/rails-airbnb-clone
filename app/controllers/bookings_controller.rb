@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
   before_action :set_booking, only: [ :show, :edit, :update ]
   before_action :set_tool, only: [ :new, :create, :index ]
 
