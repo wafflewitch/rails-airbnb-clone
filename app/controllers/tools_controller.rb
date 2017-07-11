@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
   before_action :set_tool, only: [ :show, :edit, :update, :destroy ]
   before_action :set_user, only: [ :new, :create, :index ]
 
