@@ -1,12 +1,9 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
 <div class="container">
   <%= simple_form_for(@review) do |f| %>
   <%= f.input :content %>
   <%= f.input :rating %>
-  <%= f.submit %>
+  <%= f.submit "New review" %>
 <% end %>
 
   <%= link_to 'Back', reviews_path(@review) %>
 </div>
-
