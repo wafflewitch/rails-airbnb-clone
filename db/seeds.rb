@@ -14,9 +14,9 @@ user = User.new(
   password: "mynamesgreg",
   address: "734 N. Overlook Dr., Olathe, KS 66061",
   bio: "I love sawing things!",
-  photo: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Eric_Roberts_FSC_2015.jpg",
   email: "eric@gmail.com"
   )
+user.remote_photo_url = "https://upload.wikimedia.org/wikipedia/commons/b/b9/Eric_Roberts_FSC_2015.jpg"
 user.save!
 print "user created!"
 
