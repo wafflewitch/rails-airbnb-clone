@@ -4,14 +4,19 @@
 
 .btn-rent {
   position: absolute;
-  bottom: 10px;
+  bottom: 175px;
   color: white;
   padding: 10px 30px;
   border-radius: 4px;
   font-size: 20px;
   background: $brand-color;
   transition: background 0.3s ease;
-  margin-left: -60px;
+  margin-left: -62px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+  }
 }
 
 .card-show {
@@ -41,25 +46,29 @@
 
 .card-user-show {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  left: 15px;
+  top: 15px;
 }
 .card-price-show {
   position: absolute;
-  left: 20px;
-  font-size: 10px;
+  right: 15px;
+  bottom: 10px;
   opacity: 0.9;
+  border-radius: 10px;
 }
 .card-stars {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
+.card-description-show{
+  margin-top: 100px;
+}
 .card-description-show h2 {
-  font-size: 24px;
+  font-size: 28px;
 }
 .card-description-show p {
-  font-size: 13px;
+  font-size: 16px;
 }
 .card-link-show {
   position: absolute;
