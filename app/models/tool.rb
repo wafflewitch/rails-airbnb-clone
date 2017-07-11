@@ -1,8 +1,8 @@
 class Tool < ApplicationRecord
   belongs_to :user
   has_many :reviews, through: :booking
+  has_many :bookings, dependent: :destroy
   validates :category, presence: true
-  # validates :description
   validates :title, presence: true
   validates :price, presence: true
   validates :available, presence: true

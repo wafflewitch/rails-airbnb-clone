@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   before_action :set_tool, only: [ :new, :create, :index ]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(tool_id: @tool.id)
   end
 
   def new
@@ -14,11 +14,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.tool = @tool
-    if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      render :new
-    end
+    @booking.save!
+    redirect_to booking_path(@booking)
   end
 
   def edit
@@ -43,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def set_tool
-    @tool = Tool.find(params[:id])
+    @tool = Tool.find(params[:tool_id])
   end
 end

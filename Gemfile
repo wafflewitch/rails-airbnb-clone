@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'better_errors'
