@@ -8,10 +8,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(".form-control").prop('disabled', true);
+$(".form-edit").prop('disabled', true);
 
 $( ".edit-button-profile" ).click(function() {
-  $( ".form-control").prop('disabled', false ).click();
+  $( ".form-edit").prop('disabled', false ).click();
 });
 
 
