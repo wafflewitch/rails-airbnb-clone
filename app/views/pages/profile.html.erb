@@ -9,37 +9,46 @@
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      <ul class="list-horizontal" role="form">
+      <ul class="form-horizontal" role="form">
         <h3 class="text-center personal-info-title">Personal info</h3>
-        <div class="list-group">
-          <label class="col-md-3 control-label">First name:</label>
-          <div class="col-md-8">
-            <li class="list-group-item text-center" type="text"><%= current_user.first_name %></li>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">First name:</label>
+          <div class="col-lg-8">
+            <input class="form-control form-edit" value="<%= current_user.first_name %>"  type="text">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-md-3 control-label">Last name:</label>
-          <div class="col-md-8">
-            <li class="list-group-item text-center" type="text"><%= current_user.last_name %></li>
+          <label class="col-lg-3 control-label">Last Name:</label>
+          <div class="col-lg-8">
+            <input class="form-control form-edit" value="<%= current_user.last_name %>"  type="text">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-md-3 control-label">Email:</label>
-          <div class="col-md-8">
-            <li class="list-group-item text-center" type="text"><%= current_user.email %></li>
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-lg-8">
+            <input class="form-control form-edit" value="<%= current_user.email %>"  type="text">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-md-3 control-label">Address:</label>
-          <div class="col-md-8">
-            <li class="list-group-item text-center" type="text"><%= current_user.address %></li>
+          <label class="col-lg-3 control-label">Address:</label>
+          <div class="col-lg-8">
+            <input class="form-control form-edit" value="<%= current_user.address %>"  type="text">
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label"></label>
-          <div class="col-md-8">
-            <li class="btn btn-primary edit-button-profile" type="button">Edit</li>
-          </div>
+
+    <div class="form-group">
+        <div class="col-md-8">
+          <li class="btn btn-primary edit-button-profile" type="button">Edit</li>
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <li class="btn btn-primary save-button-profile" type="button">Save</li>
+            </div>
+        </div>
+            <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <li class="btn btn-primary cancel-button-profile" type="button">Cancel</li>
+            </div>
         </div>
       </ul>
     </div>
@@ -48,7 +57,7 @@
   <h1 class="page-header">My Tools</h1>
 
   <div class="container">
-    <div class="row">
+    <div class="row cards_row">
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
           <div class="card-category">Popular</div>

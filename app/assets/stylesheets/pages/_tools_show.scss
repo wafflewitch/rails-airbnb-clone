@@ -1,0 +1,85 @@
+.wrapper-tools-show {
+  margin-top: 50px;
+}
+
+.btn-rent {
+  position: absolute;
+  bottom: 175px;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-size: 20px;
+  background: $brand-color;
+  transition: background 0.3s ease;
+  margin-left: -62px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+.card-show {
+  width: cover;
+  height: 400px;
+  margin: 30px;
+  background-size: cover !important;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  padding: 20px;
+  h2 {
+    color: rgba(0,0,0,0.7);
+    text-shadow: none;
+    margin-top: 30px;
+  }
+  p {
+    color: rgba(0,0,0,0.7);
+    text-shadow: none;
+  }
+}
+
+.tool-description {
+  margin-left: 30px;
+}
+
+.card-user-show {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.card-price-show {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+.card-stars {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description-show{
+  margin-top: 100px;
+}
+.card-description-show h2 {
+  font-size: 28px;
+}
+.card-description-show p {
+  font-size: 16px;
+}
+.card-link-show {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
