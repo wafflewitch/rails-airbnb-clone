@@ -1,28 +1,6 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand navbar-wagon-link">
-    <h3>ShedShare <i class="fa fa-handshake-o" aria-hidden="true"></i></h3>
-  </a>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
-    <!-- Log in Link -->
-    <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <!-- Button (call-to-action) -->
-    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-  </div>
-
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<!-- should have an IF/ELSE clause telling which navbar to load -->
+<% if user_signed_in? %>
+  <%= render "navbar_online" %>
+<% else %>
+  <%= render "navbar_offline" %>
+<% end %>
