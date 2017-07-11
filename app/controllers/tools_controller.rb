@@ -15,7 +15,11 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    @tools = if params[:title]
+      Tool.where('name LIKE ?', "%#{params[:title]}%")
+    else
+      Tool.all
+    end
   end
 
   def update
@@ -49,6 +53,6 @@ class ToolsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user[:id])
   end
 end
