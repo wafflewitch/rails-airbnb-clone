@@ -1,6 +1,20 @@
-<h1> The tools </h1>
-<ul>
-  <% @tools.each do |tool| %>
-    <li><%= tool.title %></li>
-  <% end %>
-</ul>
+
+<%= render 'shared/searchbar'  %>
+
+<div class="container">
+  <div class="row">
+    <% @tools.each do |tool| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/200/200/nature');">
+          <div class="card-category"><%= tool.category %></div>
+          <div class="card-description">
+            <h2><%= tool.title %></h2>
+            <p><%= tool.description %></p>
+          </div>
+          <img class="card-user avatar" src="http://lorempixel.com/200/200/people">
+          <%= link_to "", tool_path(tool), {class: "card-link"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
