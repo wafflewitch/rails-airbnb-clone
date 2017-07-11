@@ -1,63 +1,84 @@
 <div class="container" style="padding-top: 30px;">
-  <h1 class="page-header">Edit Profile</h1>
-  <div class="row">
+  <h1 class="page-header">My Profile</h1>
+  <div class="row ">
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12 avatar-profile">
       <div class="text-center">
-        <img src="https://unsplash.it/200/300?image=0" class="avatar avatar-large" alt="avatar">
-        <h6>Upload a different photo</h6>
-        <input type="file" class="text-center center-block well well-sm edit-picture-profile">
+        <img src="https://unsplash.it/200/300?image=0" class="avatar avatar-xlarge" alt="avatar">
       </div>
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      <form class="form-horizontal" role="form">
+      <ul class="list-horizontal" role="form">
         <h3 class="text-center personal-info-title">Personal info</h3>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="John"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Last name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="Doe"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Email:</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="john@doe.com" type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Address</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="123 Cool St." type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Password:</label>
+        <div class="list-group">
+          <label class="col-md-3 control-label">First name:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
+            <li class="list-group-item text-center" type="text"><%= current_user.first_name %></li>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-md-3 control-label">Confirm password:</label>
+          <label class="col-md-3 control-label">Last name:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
+            <li class="list-group-item text-center" type="text"><%= current_user.last_name %></li>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Email:</label>
+          <div class="col-md-8">
+            <li class="list-group-item text-center" type="text"><%= current_user.email %></li>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Address:</label>
+          <div class="col-md-8">
+            <li class="list-group-item text-center" type="text"><%= current_user.address %></li>
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="btn btn-primary btn-edit-profile" value="Save Changes" type="button">
-            <span></span>
-            <input class="btn btn-default btn-cancel-profile" value="Cancel" type="reset">
+            <li class="btn btn-primary edit-button-profile" type="button">Edit</li>
           </div>
         </div>
-      </form>
+      </ul>
     </div>
   </div>
+
+  <h1 class="page-header">My Tools</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Some stuff</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+        </div>
+        </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Some stuff</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2>Some stuff</h2>
+            <p>Very cool stuff, useful and smart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
