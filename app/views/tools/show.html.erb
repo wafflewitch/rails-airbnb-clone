@@ -1,9 +1,11 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
+
+<div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @tool.photo %>');">
+  <div class="card-category-show">Popular</div>
+  <div class="card-description-show">
     <h2>Some stuff</h2>
     <p>Very cool stuff, useful and smart</p>
   </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
+  <img class="card-user-show avatar" src="">
+  <a class="card-link-show" href="#" ></a>
 </div>
+<h1><%= @tool.title %></h1>
