@@ -3,29 +3,35 @@
 }
 
 .btn-rent {
+  position: absolute;
+  bottom: 10px;
   color: white;
   padding: 10px 30px;
-  margin-top: 50px;
   border-radius: 4px;
   font-size: 20px;
   background: $brand-color;
   transition: background 0.3s ease;
+  margin-left: -60px;
 }
 
 .card-show {
-  width: 500px;
-  height: 350px;
+  width: cover;
+  height: 400px;
   margin: 30px;
   background-size: cover !important;
   color: white;
   border-radius: 5px;
   position: relative;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  padding: 20px;
   h2 {
     color: rgba(0,0,0,0.7);
     text-shadow: none;
-    margin-bottom: 50px;
-    margin-top: 150px;
+    margin-top: 30px;
+  }
+  p {
+    color: rgba(0,0,0,0.7);
+    text-shadow: none;
   }
 }
 
