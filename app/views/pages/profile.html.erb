@@ -4,7 +4,8 @@
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12 avatar-profile">
       <div class="text-center">
-        <img src="https://unsplash.it/200/300?image=0" class="avatar avatar-xlarge" alt="avatar">
+        <img  <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <%= image_tag avatar_url, class: "avatar avatar-xlarge" %>
       </div>
     </div>
     <!-- edit form column -->
