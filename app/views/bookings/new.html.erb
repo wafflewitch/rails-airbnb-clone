@@ -1,2 +1,10 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+    <div class="input-daterange input-group" id="datepicker">
+        <input type="text" class="input-sm form-control" name="start" />
+        <span class="input-group-addon">to</span>
+        <input type="text" class="input-sm form-control" name="end" />
+    </div>
+
+    $('#sandbox-container .input-daterange').datepicker({
+        weekStart: 1,
+        todayHighlight: true
+    });

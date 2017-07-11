@@ -43,6 +43,6 @@ class BookingsController < ApplicationController
   end
 
   def set_tool
-    @tool = Tool.find(params[:tool_id])
+    @tool = Tool.find(params[:id])
   end
 end
