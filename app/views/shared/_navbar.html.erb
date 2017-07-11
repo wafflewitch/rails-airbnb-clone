@@ -1,1 +1,6 @@
 <!-- should have an IF/ELSE clause telling which navbar to load -->
+<% if user_signed_in? %>
+  <%= render "shared/navbar_online" %>
+<% else %>
+  <%= render "shared/navbar_offline" %>
+<% end %>
