@@ -16,7 +16,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = if params[:title]
-      Tool.where('name LIKE ?', "%#{params[:title]}%")
+      Tool.where('title LIKE ?', "%#{params[:title]}%")
     else
       Tool.all
     end
