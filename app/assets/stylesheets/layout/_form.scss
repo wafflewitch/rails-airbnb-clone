@@ -22,5 +22,53 @@
 }
 
 .avatar-profile {
-  margin-top: 40px;
+  margin-top: 100px;
+}
+
+.list-group-item {
+  margin: 15px;
+}
+
+.edit-button-profile {
+  margin-left: 594px;
+  background-color: #087E8B;
+}
+
+.edit-button-profile:hover {
+  background-color: #0b3954;
+}
+
+.cancel-button-profile {
+  background-color: white;
+  background-size: cover;
+  color: black;
+  margin-left: 201px;
+  padding-right: 206px;
+  padding-left: 206px;
+}
+
+.save-button-profile {
+  background-color: #087E8B;
+  margin-left: 56px;
+  padding-right: 213px;
+  padding-left: 212px;
+}
+
+.save-button-profile:hover {
+  background-color: #0b3954;
+}
+
+.cancel-button-profile:hover {
+  background-color: #0b3954;
+}
+
+.form-control {
+  box-shadow: none;
+}
+.btn {
+  border-color: gray;
+}
+
+.cards_row {
+  margin-top: 35px;
 }

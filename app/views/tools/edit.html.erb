@@ -1,2 +1,11 @@
-<h1>Tools#edit</h1>
-<p>Find me in app/views/tools/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for [@tool] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.submit "Update" %>
+  <% end %>
+  <%= link_to 'Back', tools_path %>
+</div>

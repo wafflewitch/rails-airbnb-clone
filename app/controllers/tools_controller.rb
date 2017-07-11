@@ -17,7 +17,11 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    @tools = if params[:title]
+      Tool.where('title LIKE ?', "%#{params[:title]}%")
+    else
+      Tool.all
+    end
   end
 
   def update
@@ -28,7 +32,8 @@ class ToolsController < ApplicationController
   def create
     @tool = Tool.new(tool_params)
     @tool.user = @user
-    if @tool.save
+    @tool.available = true
+    if @tool.save!
       redirect_to tool_path(@tool)
     else
       render :new
@@ -51,6 +56,6 @@ class ToolsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user[:id])
   end
 end
