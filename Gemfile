@@ -12,6 +12,7 @@ gem 'redis'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'sass-rails'
@@ -19,6 +20,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'better_errors'

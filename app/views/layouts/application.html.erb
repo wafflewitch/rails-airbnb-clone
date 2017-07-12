@@ -10,9 +10,10 @@
   </head>
   <body>
     <%= render 'shared/navbar'  %>
-
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <%= yield(:after_js) %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= render 'shared/footer'  %>
   </body>
 </html>
