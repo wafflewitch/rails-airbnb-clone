@@ -17,12 +17,29 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = if params[:title]
+    if !params[:title].nil?
+      search_title
+    else
+      search_category
+    end
+  end
+
+  def search_title
+     @tools = if params[:title]
       Tool.where('title LIKE ?', "%#{params[:title]}%")
     else
       Tool.all
     end
   end
+
+  def search_category
+    @tools = if params[:category]
+    Tool.where('category LIKE ?', "%#{params[:category]}%")
+  else
+    Tool.all
+  end
+  end
+
 
   def update
     @tool.update(tool_params)

@@ -13,7 +13,8 @@ class PagesController < ApplicationController
         new_category[:photo] = new_category[:tools].first.photo
       end
       @categories << new_category
+      end
     end
   end
 end
-end
+

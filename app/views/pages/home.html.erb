@@ -13,10 +13,15 @@
             <div class="card-description-home">
               <h2><%= category[:name] %></h2>
             </div>
-            <a class="card-link-home" href="#" ></a>
+            <%= link_to "", tools_path, {class: "card-link"} %>
           </div>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
+ <%= form_tag(tools_path, method: :get) do %>
+      <%= text_field_tag :category, params[:category] %>
+      <%= submit_tag 'Category', name: nil, class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
+<% end %>
