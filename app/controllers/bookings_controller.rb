@@ -1,10 +1,13 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   before_action :set_booking, only: [ :show, :edit, :update ]
-  before_action :set_tool, only: [ :new, :create, :index ]
+  before_action :set_tool, only: [ :new ]
 
   def index
-    @bookings = Booking.where(tool_id: @tool.id)
+    @bookings = Booking.where(user_id: current_user)
+  end
+
+  def show
   end
 
   def new
@@ -12,10 +15,12 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @tool = Tool.find(params[:tool_id])
     @booking = Booking.new(booking_params)
     @booking.tool = @tool
+    @booking.user = current_user
     @booking.save!
-    redirect_to booking_path(@booking)
+    redirect_to user_bookings_path(current_user)
   end
 
   def edit
@@ -23,16 +28,13 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
-  end
-
-  def show
+    redirect_to user_bookings_path(current_user)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:tool_id, :user_id, :start_time, :end_time)
+    params.require(:booking).permit(:start_time, :end_time)
   end
 
   def set_booking

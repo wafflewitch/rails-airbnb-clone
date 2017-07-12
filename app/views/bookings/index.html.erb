@@ -1,2 +1,15 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<div class="wrapper-title text-center"><h1>My Bookings</h1></div>
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-4 container container-booking">
+        <div class="card card-booking" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= booking.tool.photo %>');">
+          <div class="card-category"><h5><%= booking.tool.title %></h5></div>
+            <div class="card-description">
+              <h4><%= booking.start_time.strftime('%b%_d') %> - <%= booking.end_time.strftime('%b%_d') %></h4>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,15 @@
-    <div class="input-daterange input-group" id="datepicker">
-        <input type="text" class="input-sm form-control" name="start" />
-        <span class="input-group-addon">to</span>
-        <input type="text" class="input-sm form-control" name="end" />
-    </div>
+<% content_for(:after_js) do %>
+<div class="container text-center padded">
+  <h3>You're booking:</h3>
+  <h3><%= @tool.title %></h3>
+  <div class="input-daterange input-group booking-form" id="datepicker">
+    <%= simple_form_for [@tool, @booking] do |f| %>
+      <%= f.text_field :start_time, as: :startdate %>
+      <%= f.text_field :end_time, as: :enddate %>
+      <%= f.hidden_field :tool_id, value: @tool.id %>
+      <%= f.submit "Confirm Booking", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <h3>for $<%= @tool.price %>/day</h3>
+</div>
+<% end %>
