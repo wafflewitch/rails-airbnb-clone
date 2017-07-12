@@ -1,5 +1,5 @@
 class Tool < ApplicationRecord
-  CATEGORIES = ["power tools", "books", "transport", "hand tools", "sport", "painting"]
+  CATEGORIES = ["hand tools", "power tools", "painting", "landscaping", "entertainment"]
   belongs_to :user
   has_many :reviews, through: :booking
   validates :category, inclusion: { in: CATEGORIES }
