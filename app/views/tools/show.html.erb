@@ -9,12 +9,12 @@
           <div class="card-stars">
 
           </div>
-          <img class="avatar-medium card-user-show" src="<%= @user.photo %>">
           <a class="card-link-show" href="" ></a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="card-show text-center card-description-show">
+        <img class="avatar-medium" src="<%= @user.photo %>">
           <h2><%= @tool.title %></h2>
           <p>"<%= @tool.description %>"</p>
           <%= link_to "Rent it!", new_booking_path, class: "btn-rent" %>
