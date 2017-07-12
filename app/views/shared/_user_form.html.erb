@@ -1,0 +1,85 @@
+<%= simple_form_for @user,
+  :url => user_registration_path,
+  :html => {class: "form-horizontal", method: :put},
+  :defaults => { :label_html => { :class => "col-lg-3 control-label" },
+  :input_html => { :class => "form-control form-edit"} } do |f| %>
+
+  <h3 class="text-center personal-info-title">Personal info</h3>
+    <% if @editable && devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :address  %>
+  <% if @editable %>
+    <div id="hide-password">
+
+      <%= f.input :current_password, hint: "Current Password", required: true %>
+    </div>
+    <button class="btn btn-primary edit-button-profile " id="profile-edit-button" type="button">Edit</button>
+    <%= f.button :submit, "Save", :class => "btn btn-primary save-button-profile", :id => "profile-save-button" %>
+    <button class="btn btn-primary cancel-button-profile" id="cancel-edit-button" type="button">Cancel</button>
+  <% end %>
+<% end %>
+
+
+
+
+<% content_for(:after_js) do %>
+  <% javascript_tag do %>
+    <% if @editable %>
+          $(document).ready( function() {
+          console.log("HELLO");
+          // Toggling whether the form is enabled or disabled.
+
+          // Disabled by Default
+          $(".form-edit").prop('disabled', true);
+          $("button#cancel-edit-button").hide();
+          $("input#profile-save-button").hide();
+          $("div#new-photo-upload").hide();
+          $("div#hide-password").hide();
+
+
+          // Enable form when clicking edit
+          $("button#profile-edit-button").click(function() {
+          console.log("hey sup");
+          $( ".form-edit").prop('disabled', false );
+        });
+
+        // Upon clicking edit, hide edit button and show save/cancel
+        $( "button#profile-edit-button" ).click(function() {
+        $( "input#profile-save-button" ).show();
+        $( "button#cancel-edit-button" ).show();
+        $( "button#profile-edit-button" ).hide();
+        $("div#new-photo-upload").show();
+        $("div#hide-password").show();
+
+      });
+
+      // Disable form if they cancel
+      $("button#cancel-edit-button").click(function() {
+      console.log("holla");
+      $( ".form-edit").prop('disabled', true);
+    });
+
+    // Upon clicking edit, hide edit button and show save/cancel
+    $( "button#cancel-edit-button" ).click(function() {
+    $( "input#profile-save-button" ).hide();
+    $( "button#cancel-edit-button" ).hide();
+    $( "button#profile-edit-button" ).show();
+    $("div#new-photo-upload").hide();
+    $("div#hide-password").hide();
+
+  });
+  });
+  <% else %>
+    $(document).ready( function() {
+      $(".form-edit").prop('disabled', true);
+    });
+  <% end %>
+
+
+  <% end %>
+<% end %>
+

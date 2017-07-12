@@ -20,16 +20,13 @@
   margin-left: 115px;
 }
 
-.avatar-profile {
-  margin-top: 100px;
-}
 
 .list-group-item {
   margin: 15px;
 }
 
 .edit-button-profile {
-  margin-left: 594px;
+  margin-left: 592px;
   background-color: #087E8B;
 }
 
@@ -41,16 +38,16 @@
   background-color: white;
   background-size: cover;
   color: black;
-  margin-left: 201px;
-  padding-right: 206px;
-  padding-left: 206px;
+  margin-left: 172px;
+  padding-right: 212px;
+  padding-left: 213px;
 }
 
 .save-button-profile {
   background-color: #087E8B;
-  margin-left: 56px;
-  padding-right: 213px;
-  padding-left: 212px;
+  margin-left: 173px;
+  padding-right: 248px;
+  padding-left: 225px;
 }
 
 .save-button-profile:hover {
@@ -63,6 +60,7 @@
 
 .form-control {
   box-shadow: none;
+  width: 470px;
 }
 .btn {
   border-color: gray;
@@ -70,4 +68,21 @@
 
 .cards_row {
   margin-top: 35px;
+}
+.plus-btn {
+  border-color: white;
+  margin-right: 495px;
+  &:hover {
+    background-color: white;
+    border-color: white;
+  }
+  &:active {
+    background-color: white;
+    border-color: white;
+    color: gray;
+  }
+}
+
+.photo-uploader {
+  width:221px;
 }
