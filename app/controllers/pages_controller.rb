@@ -6,11 +6,11 @@ class PagesController < ApplicationController
       new_category = {
         name: category,
         tools: Tool.where(category: category),
-        image: ""
+        photo: ''
       }
     if new_category[:tools].length > 0
       if !new_category[:tools].first.photo.nil?
-        new_category[:image] = new_category[:tools].first.photo
+        new_category[:photo] = new_category[:tools].first.photo
       end
       @categories << new_category
     end
