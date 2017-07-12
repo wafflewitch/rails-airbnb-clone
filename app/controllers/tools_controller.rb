@@ -34,7 +34,7 @@ class ToolsController < ApplicationController
 
   def search_category
     @tools = if params[:category]
-    Tool.where('category LIKE ?', "%#{params[:category]}%")
+    Tool.where(category: params[:category])
   else
     Tool.all
   end
