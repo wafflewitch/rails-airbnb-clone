@@ -1,14 +1,17 @@
 .banner {
-  padding: 60px;
-}
-
-h1{
+  padding: 60px 0 0 67px;
+  background-size: cover;
+  height: 400px;
+  h1 {
   font-weight: bold;
   font-size: 48px;
-  color: brandcolor;
-}
-
-h2{
-  font-color: blue ;
-  font-size: 35px;
+  color: white;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  h2 {
+    color: white;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: lighter;
+    margin-bottom: 20px;
+  }
 }
