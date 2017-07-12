@@ -1,9 +1,11 @@
 <div class="wrapper-signup">
   <div class="container signup-box">
+    <div class="div text-center">
+      <%= render "devise/shared/links" %>
+    </div>
     <fieldset>
     <div id="legend">
-      <legend class=""><h2>Sign up</h2></legend>
-
+      <legend class=""><h4>Sign up</h4></legend>
     </div>
     <div class="control-group">
 
@@ -24,7 +26,6 @@
 
       <div class="form-actions text-center">
         <%= f.button :submit, "Sign up", class: "btn-signup" %>
-        <%= render "devise/shared/links" %>
       </div>
     <% end %>
 

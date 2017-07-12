@@ -12,10 +12,23 @@
   padding: 20px;
 }
 
+.required {
+  font-weight: normal;
+}
+
 .btn-signup {
   width: 270px;
   margin-top: 20px;
-  background-color: rgb(235,235,235);
+  background-color: #FFF8F0;
+  opacity: 0.9;
+  border: solid 1px rgb(200,200,200);
+  height: 45px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: rgb(20,20,20);
+  &:hover {
+    background-color: #FFF8F0;
+  }
 }
 
 .fa-facebook:before{
