@@ -1,19 +1,20 @@
-<div class="wrapper-signup">
-  <div class="container padded">
-    <h2>Log in</h2>
-
+<div class="wrapper-login">
+  <div class="container login-box">
+    <div class="form-header text-center">
+      <h2>Log in</h2>
+    </div>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email, required: false, autofocus: true %>
         <%= f.input :password, required: false %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+    
+      <div class="form-actions text-center">
+        <%= f.button :submit, "Log in", class: "btn-login" %>
+        <% end %>
       </div>
-    <% end %>
+        <%= render "devise/shared/links" %>
 
-  <%= render "devise/shared/links" %>
   </div>
 </div>
