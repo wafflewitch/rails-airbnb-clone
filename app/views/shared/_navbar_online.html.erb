@@ -14,7 +14,12 @@
     <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to image_tag('http://lorempixel.com/200/200', alt: 'user', class: 'avatar'), profile_path %>
+
+    <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <%= link_to profile_path do %>
+    <%=  image_tag avatar_url, class: "avatar" %>
+    <% end %>
+
     <!-- <img src="http://lorempixel.com/200/200" alt="user" class="avatar"> -->
 
   </div>
@@ -32,3 +37,4 @@
     </div>
   </div>
 </div>
+
