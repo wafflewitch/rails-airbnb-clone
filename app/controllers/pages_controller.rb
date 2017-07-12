@@ -3,5 +3,8 @@ class PagesController < ApplicationController
   def home
   end
 
+  def profile
+    @tools = Tool.where(user_id: current_user.id)
+  end
 
 end

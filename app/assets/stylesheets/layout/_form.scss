@@ -30,7 +30,7 @@
 }
 
 .edit-button-profile {
-  margin-left: 594px;
+  margin-left: 646px;
   background-color: #087E8B;
 }
 
@@ -42,16 +42,16 @@
   background-color: white;
   background-size: cover;
   color: black;
-  margin-left: 201px;
-  padding-right: 206px;
-  padding-left: 206px;
+  margin-left: 210px;
+  padding-right: 219px;
+  padding-left: 218px;
 }
 
 .save-button-profile {
   background-color: #087E8B;
-  margin-left: 56px;
-  padding-right: 213px;
-  padding-left: 212px;
+  margin-left: 210px;
+  padding-right: 261px;
+  padding-left: 225px;
 }
 
 .save-button-profile:hover {
@@ -72,3 +72,22 @@
 .cards_row {
   margin-top: 35px;
 }
+.plus-btn {
+  border-color: white;
+  margin-right: 700px;
+  &:hover {
+    background-color: white;
+    border-color: white;
+  }
+  &:active {
+    background-color: white;
+    border-color: white;
+    color: gray;
+  }
+}
+
+
+
+
+
+
