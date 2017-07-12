@@ -11,6 +11,7 @@ input {
   width: 100px;
   padding: none;
   margin: none;
+  border: solid 1px $brand-color;
 }
 
 .search-form-home{
@@ -27,6 +28,6 @@ input {
 }
 
 #for_index_page{
-  margin-top: 90px;
+  margin-top: 50px;
   margin-bottom: 40px;
 }

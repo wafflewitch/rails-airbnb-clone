@@ -1,8 +1,9 @@
 class Tool < ApplicationRecord
+  CATEGORIES = ["hand tools", "power tools", "painting", "landscaping", "entertainment"]
   belongs_to :user
   has_many :reviews, through: :booking
-  validates :category, presence: true
-  # validates :description
+  has_many :bookings, dependent: :destroy
+  validates :category, inclusion: { in: CATEGORIES }
   validates :title, presence: true
   validates :price, presence: true
   validates :available, presence: true
