@@ -1,0 +1,49 @@
+.wrapper-signup {
+ padding-top: 50px;
+ padding-bottom: 50px;
+ background-color: $brand-color;
+}
+
+.signup-box {
+  border: solid 2px rgb(230,230,230);
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.btn-login {
+  width: 450px;
+}
+
+.fa-facebook:before{
+    margin-right: 15px;
+  }
+
+.btn-facebook {
+  margin-top: 12px;
+  margin-bottom: 5px;
+  margin-left: 1px;
+  padding-left: 10px;
+  background-color: #3B5998;
+  border-radius: 0;
+  opacity: 1;
+  width: 453px;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #263961;
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: "Helvetica";
+    font-size: 20px;
+  }
+}
+.btn-facebook:link, .btn-facebook:visited {
+  color: #fff;
+}
+.btn-facebook:active, .btn-facebook:hover {
+  background: #263961;
+  color: #fff;
+}
