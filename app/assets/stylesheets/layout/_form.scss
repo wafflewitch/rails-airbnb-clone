@@ -21,16 +21,13 @@
   margin-left: 115px;
 }
 
-.avatar-profile {
-  margin-top: 100px;
-}
 
 .list-group-item {
   margin: 15px;
 }
 
 .edit-button-profile {
-  margin-left: 646px;
+  margin-left: 592px;
   background-color: #087E8B;
 }
 
@@ -42,15 +39,15 @@
   background-color: white;
   background-size: cover;
   color: black;
-  margin-left: 210px;
-  padding-right: 219px;
-  padding-left: 218px;
+  margin-left: 172px;
+  padding-right: 212px;
+  padding-left: 213px;
 }
 
 .save-button-profile {
   background-color: #087E8B;
-  margin-left: 210px;
-  padding-right: 261px;
+  margin-left: 173px;
+  padding-right: 248px;
   padding-left: 225px;
 }
 
@@ -64,6 +61,7 @@
 
 .form-control {
   box-shadow: none;
+  width: 470px;
 }
 .btn {
   border-color: gray;
@@ -74,7 +72,7 @@
 }
 .plus-btn {
   border-color: white;
-  margin-right: 700px;
+  margin-right: 495px;
   &:hover {
     background-color: white;
     border-color: white;
@@ -86,8 +84,6 @@
   }
 }
 
-
-
-
-
-
+.photo-uploader {
+  width:221px;
+}

@@ -16,7 +16,7 @@
     <!-- Button (call-to-action) -->
 
     <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-    <%= link_to profile_path do %>
+    <%= link_to user_path(current_user)do %>
     <%=  image_tag avatar_url, class: "avatar" %>
     <% end %>
 

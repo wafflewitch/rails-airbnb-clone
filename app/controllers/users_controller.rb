@@ -9,11 +9,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if @user == current_user
+      redirect_to edit_user_registration_path
+    end
+    @tools = Tool.where(user_id: current_user.id)
   end
 
   def update
-    @user.update(user_params)
+    @user.update_without_password(editable_user_params)
     redirect_to users_path
   end
 
@@ -35,6 +38,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :first_name, :last_name, :address, :bio, :photo, :photo_cache)
+  end
+
+  def editable_params
+    params.require(:user).permit(:first_name, :last_name, :address, :email)
   end
 
   def set_user
