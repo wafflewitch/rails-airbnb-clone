@@ -1,6 +1,3 @@
-<% @tools = Tool.where(user_id: current_user.id) %>
-<% @editable = true %>
-
 <div class="container" style="padding-top: 30px;">
   <h1 class="page-header">My Profile</h1>
   <div class="row ">
@@ -11,7 +8,7 @@
         <%= image_tag avatar_url, class: "avatar avatar-xlarge" %>
       </div>
 
-      <div id="new-photo-upload">
+      <div id="new-photo-upload" >
         <h6 class="text-center">Upload a different photo...</h6>
         <input type="file" class="text-center center-block well well-sm photo-uploader">
       </div>

@@ -4,91 +4,104 @@
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12 avatar-profile">
       <div class="text-center">
-        <img  <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-    <%= image_tag avatar_url, class: "avatar avatar-xlarge" %>
+        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <%= image_tag avatar_url, class: "avatar avatar-xlarge" %>
+      </div>
+
+      <div id="new-photo-upload">
+        <h6 class="text-center">Upload a different photo...</h6>
+        <input type="file" class="text-center center-block well well-sm photo-uploader">
       </div>
     </div>
+
     <!-- edit form column -->
+
+    <div class="container">
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-      <ul class="form-horizontal" role="form">
-        <h3 class="text-center personal-info-title">Personal info</h3>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
-          <div class="col-lg-8">
-            <input class="form-control form-edit" value="<%= current_user.first_name %>"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Last Name:</label>
-          <div class="col-lg-8">
-            <input class="form-control form-edit" value="<%= current_user.last_name %>"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Email:</label>
-          <div class="col-lg-8">
-            <input class="form-control form-edit" value="<%= current_user.email %>"  type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Address:</label>
-          <div class="col-lg-8">
-            <input class="form-control form-edit" value="<%= current_user.address %>"  type="text">
-          </div>
-        </div>
+        <%= simple_form_for :user,
+          :url => user_registration_path,
+          :method => "delete",
+          :html => {class: "form-horizontal"},
+          :defaults => { :label_html => { :class => "col-lg-3 control-label" },
+          :input_html => { :class => "form-control form-edit"} } do |f| %>
 
-    <div class="form-group">
-        <div class="col-md-8">
-          <li class="btn btn-primary edit-button-profile" type="button">Edit</li>
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <li class="btn btn-primary save-button-profile" type="button">Save</li>
-            </div>
-        </div>
-            <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <li class="btn btn-primary cancel-button-profile" type="button">Cancel</li>
-            </div>
-        </div>
-      </ul>
-    </div>
-  </div>
-
-  <h1 class="page-header">My Tools</h1>
-
-  <div class="container">
-    <div class="row cards_row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Some stuff</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-        </div>
-        </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Some stuff</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300?image=0');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Some stuff</h2>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-        </div>
+            <h3 class="text-center personal-info-title">Personal info</h3>
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :email %>
+            <%= f.input :address  %>
+            <button class="btn btn-primary edit-button-profile " id="profile-edit-button" type="button">Edit</button>
+            <%= f.submit "Save", :class => "btn btn-primary save-button-profile", :id => "profile-save-button" %>
+            <button class="btn btn-primary cancel-button-profile" id="cancel-edit-button" type="button">Cancel</button>
+        <% end %>
       </div>
     </div>
+    <div class="profile-tools-header">
+      <h2 class="page-header inline-block ">My Tools<%= link_to "", new_tool_path, class: "btn btn-default plus-btn fa fa-plus", title: "Edit"%></h2>
+    </div>
   </div>
-
-
-
 </div>
+
+<div class="container">
+  <div class="row">
+    <% @tools.each do |tool| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/200/200/nature');">
+          <div class="card-category"><%= tool.category %></div>
+          <div class="card-description">
+            <h2><%= tool.title %></h2>
+            <p><%= tool.description %></p>
+          </div>
+          <%= link_to "", tool_path(tool), {class: "card-link"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <% javascript_tag do %>
+    $(document).ready( function() {
+      console.log("HELLO");
+      // Toggling whether the form is enabled or disabled.
+
+      // Disabled by Default
+      $(".form-edit").prop('disabled', true);
+      $("button#cancel-edit-button").hide();
+      $("input#profile-save-button").hide();
+      $("div#new-photo-upload").hide();
+
+      // Enable form when clicking edit
+      $("button#profile-edit-button").click(function() {
+        console.log("hey sup");
+        $( ".form-edit").prop('disabled', false );
+      });
+
+      // Upon clicking edit, hide edit button and show save/cancel
+      $( "button#profile-edit-button" ).click(function() {
+        $( "input#profile-save-button" ).show();
+        $( "button#cancel-edit-button" ).show();
+        $( "button#profile-edit-button" ).hide();
+        $("div#new-photo-upload").show();
+      });
+
+      // Disable form if they cancel
+      $("button#cancel-edit-button").click(function() {
+        console.log("holla");
+        $( ".form-edit").prop('disabled', true);
+      });
+
+      // Upon clicking edit, hide edit button and show save/cancel
+      $( "button#cancel-edit-button" ).click(function() {
+        $( "input#profile-save-button" ).hide();
+        $( "button#cancel-edit-button" ).hide();
+        $( "button#profile-edit-button" ).show();
+        $("div#new-photo-upload").hide();
+      });
+    });
+  <% end %>
+<% end %>
+
+
+
+
