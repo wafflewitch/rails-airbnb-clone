@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand navbar-wagon-link">
-    <h3>ShedShare <i class="fa fa-handshake-o" aria-hidden="true"></i></h3>
+    <%= cl_image_tag("shed-share-logo-1", :width=>70, :height=>70, :crop=>"scale") %></h3>
   </a>
 
   <!-- Right Navigation -->
@@ -16,7 +16,10 @@
     <!-- Button (call-to-action) -->
 
     <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-    <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+    <%= link_to profile_path do %>
+    <%=  image_tag avatar_url, class: "avatar" %>
+    <% end %>
+
     <!-- <img src="http://lorempixel.com/200/200" alt="user" class="avatar"> -->
 
   </div>
@@ -34,3 +37,4 @@
     </div>
   </div>
 </div>
+
