@@ -1,10 +1,20 @@
 .wrapper-tools-show {
-  margin-top: 50px;
+  padding-top: 30px;
+  background-color: rgb(210,210,210);
+  margin-bottom: 10px;
+}
+
+.wrapper-tools-reviews {
+  margin-left: 50px;
+  h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
 }
 
 .btn-rent {
   position: absolute;
-  bottom: 175px;
+  bottom: 100px;
   color: white;
   padding: 10px 30px;
   border-radius: 4px;
@@ -17,6 +27,23 @@
     color: white;
     opacity: 0.7;
   }
+}
+
+#text-review-description {
+  margin-left: 5px;
+}
+
+.list-reviews {
+  list-style: none;
+  padding: 0;
+  i.fa.fa-star {
+    padding-left: -10px;
+    color: #eaea2e;
+  }
+  p {
+    margin-left: -20px;
+  }
+
 }
 
 .card-show {
@@ -60,9 +87,13 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  i.fa.fa-stars {
+    color: yellow;
+  }
 }
 .card-description-show{
-  margin-top: 100px;
+  margin-top: 60px;
+  margin-right: 50px;
 }
 .card-description-show h2 {
   font-size: 28px;
