@@ -1,21 +1,17 @@
 <%= render 'shared/banner'  %>
 
 <div class="wrapper-categories">
-  <div class="container">
-    <h4>Categories</h4>
+  <div class="container text-center">
+    <h3>Search by Category</h3><br>
   </div>
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
-      <% @categories.each do |category| %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(<%= category[:photo] %>);">
-            <div class="card-description-home">
-              <h2><%= category[:name] %></h2>
-            </div>
-            <%= link_to " ", tools_path(category: category[:name]), {class: "card-link"} %>
-          </div>
-        </div>
-      <% end %>
+        <ul class="list-inline">
+          <li><%= link_to cl_image_tag("icon_tools.png"), tools_path(tags: "hand tools") %></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li><%= link_to cl_image_tag("icon_landscaping.png"), tools_path(tags: "yard work") %></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li><%= link_to cl_image_tag("icon_camping.png", :height=>100, :width=>100, :crop=>"scale"), tools_path(tags: "camping") %></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li><%= link_to cl_image_tag("icon_cooking.png", :height=>105, :width=>105, :crop=>"scale"), tools_path(tags: "cooking") %></li>
+        </ul>
     </div>
   </div>
 </div>

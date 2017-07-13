@@ -4,8 +4,8 @@
         <%= simple_form_for @tool do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
-          <%= f.input :category, as: :select, collection: Tool::CATEGORIES, include_blank: "Select a category" %>
           <%= f.input :price %>
+          <%= f.input :tags, as: :check_boxes, collection: Tool::CATEGORIES %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
       <div class="text-center">

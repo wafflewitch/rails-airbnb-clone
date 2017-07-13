@@ -32,11 +32,11 @@ class ToolsController < ApplicationController
   end
 
   def search_category
-    @tools = if params[:category]
-    Tool.where(category: params[:category])
-  else
-    Tool.all
-  end
+    @tools = if params[:tags]
+    Tool.where(tags: params[:tags])
+    else
+      Tool.all
+    end
   end
 
 
@@ -47,6 +47,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    @tool.tags = params[:tool][:tags].reject { |c| c.empty? }
     @tool.user = @user
     @tool.available = true
     if @tool.save!
@@ -64,7 +65,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:user_id, :category, :description, :title, :price, :available, :photo, :photo_cache)
+    params.require(:tool).permit(:user_id, :tags, :description, :title, :price, :available, :photo, :photo_cache)
   end
 
   def set_tool
