@@ -5,7 +5,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+          <a class="navbar-brand" href="/">ShedShare</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -15,13 +15,10 @@
                   <a href="#page-top"></a>
               </li>
               <li class="page-scroll">
-                  <a href="#portfolio">Portfolio</a>
+                  <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
               </li>
               <li class="page-scroll">
-                  <a href="#about">About</a>
-              </li>
-              <li class="page-scroll">
-                  <a href="#contact">Contact</a>
+                  <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
               </li>
           </ul>
       </div>
