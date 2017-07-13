@@ -1,12 +1,16 @@
-<div class="container">
-  <%= simple_form_for @tool do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :category, as: :select, collection: Tool::CATEGORIES, include_blank: "Select a category" %>
-    <%= f.input :price %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Create Listing", class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
-  <% end %>
-  <%= link_to 'Back', tools_path %>
+<div class="wrapper-tool-add">
+  <div class="container">
+    <div class="text-center new-tool-box">
+        <%= simple_form_for @tool do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :category, as: :select, collection: Tool::CATEGORIES, include_blank: "Select a category" %>
+          <%= f.input :price %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit "Create Listing", class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
+        <% end %>
+        <%= link_to 'Back', tools_path %>
+    </div>
+  </div>
 </div>
