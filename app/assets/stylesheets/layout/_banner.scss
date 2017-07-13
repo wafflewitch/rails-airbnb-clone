@@ -1,7 +1,7 @@
 .banner {
-  padding: 60px 0 0 67px;
+  padding: 60px 0 0 33px;
   background-size: cover;
-  height: 400px;
+  height: 537px;
   h1 {
   font-weight: bold;
   font-size: 48px;
@@ -14,4 +14,8 @@
     font-weight: lighter;
     margin-bottom: 20px;
   }
+}
+
+h4 {
+  position: text-center;
 }
