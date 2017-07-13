@@ -1,13 +1,17 @@
-<div class="wrapper-tools-show">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @tool.photo %>');">
-          <div class="card-price-show">
-            <h3>$<%= @tool.price %>/day</h3>
+<div class="container">
+  <div class="wrapper-tools-show">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+          <%= render 'shared/card' %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-show text-center card-description-show">
+          <img class="avatar-medium" src="<%= current_user.photo %>">
+            <h2><%= @tool.title %></h2>
+            <p>"<%= @tool.description %>"</p>
+            <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "btn-rent" %>
           </div>
-          <div class="card-stars">
-
           </div>
           <a class="card-link-show" href="" ></a>
         </div>
@@ -23,6 +27,7 @@
             <%= link_to "Edit", edit_tool_path(@tool), {class: "search-button navbar-wagon-item navbar-wagon-button btn"}%>
           <% end %>
           <%= link_to 'Back', :back, {class: "search-button navbar-wagon-item navbar-wagon-button btn"} %>
+
         </div>
       </div>
     </div>
@@ -32,17 +37,6 @@
 <div class="wrapper-tools-reviews">
   <div class="container">
     <h3>Reviews</h3>
-  </div>
-  <div class="container">
-    <ul class="list-reviews">
-      <li><p>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </p>
-      <p id="text-review-description">"Perfect for my needs and friendly owner!"</p></li>
-    </ul>
   </div>
 </div>
 

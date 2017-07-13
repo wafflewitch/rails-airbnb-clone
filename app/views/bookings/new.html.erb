@@ -7,7 +7,7 @@
       <%= f.text_field :start_time, as: :startdate %>
       <%= f.text_field :end_time, as: :enddate %>
       <%= f.hidden_field :tool_id, value: @tool.id %>
-      <%= f.submit "Confirm Booking", class: "btn btn-primary" %>
+      <%= f.submit "Confirm Booking", class: "new-booking-button search-button navbar-wagon-item navbar-wagon-button btn" %>
     <% end %>
   </div>
   <h3>for $<%= @tool.price %>/day</h3>
