@@ -18,6 +18,14 @@ input {
   border: none;
 }
 
+.search-index {
+  input#title {
+  height: 49px;
+  border-radius: 5px;
+  background-color: #f4f4f4 !important;
+}
+}
+
 .search-by-location-input{
   height: 43px;
 
