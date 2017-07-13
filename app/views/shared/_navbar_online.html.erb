@@ -13,8 +13,12 @@
 
     <!-- Button (call-to-action) -->
 
-    <%= link_to user_path(current_user)do %>
-    <%= image_tag 'http://res.cloudinary.com/wafflewitch/image/upload/c_scale,h_50,r_50,w_50/v1499912601/userpic.jpg', class: "avatar" %>
+    <%= link_to user_path(current_user) do %>
+      <% if current_user.facebook_picture_url.nil? %>
+        <%= image_tag current_user.photo, class: "avatar" %>
+      <% else %>
+        <%= image_tag current_user.facebook_picture_url, class: "avatar" %>
+      <% end %>
     <% end %>
 
     <!-- <img src="http://lorempixel.com/200/200" alt="user" class="avatar"> -->
