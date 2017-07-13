@@ -2,7 +2,7 @@
   <div class="search-by-tool form-inline">
 
     <%= form_tag(tools_path, method: :get) do %>
-      <%= text_field_tag :title, params[:title].downcase, :placeholder => "lawn mower" %>
+      <%= text_field_tag :title, params[:title], :placeholder => "lawn mower" %>
       <%= submit_tag 'Search', name: nil, class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
     <% end %>
 
