@@ -2,22 +2,31 @@
 
 <div class="wrapper-categories">
   <div class="container">
-    <h4>Categories</h4>
+    <!-- <h4>Categories</h4> -->
   </div>
   <div class="container">
     <div class="row">
-      <% @categories.each do |category| %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(<%= category[:photo] %>);">
-            <div class="card-description-home">
-              <h2><%= category[:name] %></h2>
-            </div>
-            <%= link_to " ", tools_path(category: category[:name]), {class: "card-link"} %>
+        <div class="col-xs-12 col-sm-4 text-center">
+          <div class="card-home">
+
+            <img src="<%= asset_path( 'icon_light_tent.svg' ) %>" class="home-icons">
+            <p>Camping Supplies</p>
           </div>
         </div>
-      <% end %>
+        <div class="col-xs-12 col-sm-4 text-center">
+          <div class="card-home">
+
+            <img src="<%= asset_path( 'icon_light_tent.svg' ) %>" class="home-icons">
+            <p>Camping Supplies</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 text-center">
+          <div class="card-home">
+
+            <img src="<%= asset_path( 'icon_light_speakers.svg' ) %>" class="home-icons">
+            <p>Entertainment Equipment</p>
+          </div>
+        </div>
     </div>
   </div>
 </div>
-
-
