@@ -1,12 +1,20 @@
-<div class="container">
+<div class="wrapper-tool-add">
+  <div class="container">
+    <div class="new-tool-box">
   <%= simple_form_for @tool do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :category, as: :select, collection: Tool::CATEGORIES, include_blank: "Select a category" %>
+    <%= f.input :tags, as: :check_boxes, collection: Tool::CATEGORIES, name: nil %>
     <%= f.input :price %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Edit" %>
+      <div class="text-center">
+        <%= f.submit "Edit" %>
   <% end %>
-  <%= link_to 'Back', tools_path %>
+  <br>
+  <br>
+  <%= link_to 'Back', :back %>
+      </div>
+    </div>
+  </div>
 </div>
