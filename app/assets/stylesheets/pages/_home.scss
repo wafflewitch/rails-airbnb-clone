@@ -3,9 +3,13 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 .wrapper-categories {
-  margin: 50px;
+  padding-bottom: 60px;
   div.container h4 {
     font-size: 20px;
+  }
+  h1 {
+    color: black;
+    padding-top: 20px;
   }
 }
 
@@ -15,6 +19,14 @@
   background-size: cover !important;
   color: white;
   position: relative;
+  p {
+    color: #16887F;
+    font-weight: normal;
+    padding-top: 10px;
+    text-shadow: none;
+    font-size: 20px;
+  }
+
 }
 
 .card-description-home {
@@ -27,18 +39,20 @@
   font-size: 25px;
 }
 
-.card-link-home {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link-home:hover {
-  opacity: 0.1;
+.home-icons {
+  height: 175px;
+  width: 175px;
+  transition: all 0.3s;
+  &:hover {
+  opacity: 0.7;
+  }
+  &:hover p {
+    text-decoration: none;
+  }
 }
 
-
+.page-break-icon {
+  height: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
