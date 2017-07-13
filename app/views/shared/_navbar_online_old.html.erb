@@ -1,0 +1,38 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand navbar-wagon-link">
+    <img src="http://res.cloudinary.com/wafflewitch/image/upload/c_scale,h_70,w_70/v1499871160/shed-share-logo-1.png"></a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Navigation buttons -->
+    <%= link_to "Create Listing", new_tool_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <!-- Log in Link -->
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <!-- Button (call-to-action) -->
+
+    <%= link_to user_path(current_user)do %>
+    <%= image_tag 'http://res.cloudinary.com/wafflewitch/image/upload/c_scale,h_50,r_50,w_50/v1499912601/userpic.jpg', class: "avatar" %>
+    <% end %>
+
+    <!-- <img src="http://lorempixel.com/200/200" alt="user" class="avatar"> -->
+
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Log Out</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Tools</a></li>
+        <li><a href="#">Messages</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
