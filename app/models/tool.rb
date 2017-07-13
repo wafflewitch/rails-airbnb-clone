@@ -7,5 +7,6 @@ class Tool < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   validates :available, presence: true
-  validates :photo, presence: true, uniqueness: true
+  mount_uploader :photo, PhotoUploader
+  validates :photo, presence: true
 end

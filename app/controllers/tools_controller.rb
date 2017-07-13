@@ -65,7 +65,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:user_id, :category, :description, :title, :price, :available, :photo)
+    params.require(:tool).permit(:user_id, :category, :description, :title, :price, :available, :photo, :photo_cache)
   end
 
   def set_tool

@@ -1,8 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand navbar-wagon-link">
-    <%= cl_image_tag("shed-share-logo-1", :width=>70, :height=>70, :crop=>"scale") %></h3>
-  </a>
+    <img src="http://res.cloudinary.com/wafflewitch/image/upload/c_scale,h_70,w_70/v1499871160/shed-share-logo-1.png"></a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -15,9 +14,8 @@
 
     <!-- Button (call-to-action) -->
 
-    <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
     <%= link_to user_path(current_user)do %>
-    <%=  image_tag avatar_url, class: "avatar" %>
+    <%= image_tag 'http://res.cloudinary.com/wafflewitch/image/upload/c_scale,h_50,r_50,w_50/v1499912601/userpic.jpg', class: "avatar" %>
     <% end %>
 
     <!-- <img src="http://lorempixel.com/200/200" alt="user" class="avatar"> -->
