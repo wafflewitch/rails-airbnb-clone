@@ -3,13 +3,13 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 .wrapper-categories {
-  background-size: cover;
+  padding-bottom: 60px;
   div.container h4 {
     font-size: 20px;
   }
   h1 {
-    color: $darkblue;
-    padding: 20px 0;
+    color: black;
+    padding-top: 20px;
   }
 }
 
@@ -20,6 +20,11 @@
   color: white;
   position: relative;
   p {
+    color: #16887F;
+    font-weight: lighter;
+    padding-top: 10px;
+    text-shadow: none;
+    font-size: 20px;
   }
 }
 
@@ -48,7 +53,12 @@
 }
 
 .home-icons {
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
 }
 
+.page-break-icon {
+  height: 45px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
