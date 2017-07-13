@@ -1,6 +1,6 @@
 <div class="wrapper-tool-add">
   <div class="container">
-    <div class="text-center new-tool-box">
+    <div class="new-tool-box">
         <%= simple_form_for @tool do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
@@ -8,9 +8,12 @@
           <%= f.input :price %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
+      <div class="text-center">
           <%= f.submit "Create Listing", class: "create-listing-button search-button navbar-wagon-item navbar-wagon-button btn" %>
         <% end %>
+        <br>
         <%= link_to 'Back', tools_path %>
+      </div>
     </div>
   </div>
 </div>
