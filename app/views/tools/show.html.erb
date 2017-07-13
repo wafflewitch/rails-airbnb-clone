@@ -17,8 +17,12 @@
         <img class="avatar-medium" src="<%= current_user.photo %>">
           <h2><%= @tool.title %></h2>
           <p>"<%= @tool.description %>"</p>
-          <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "btn-rent" %>
-          <%= link_to 'Back', :back, {class: "button button-md"} %>
+          <% if @user != current_user %>
+            <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
+          <% else %>
+            <%= link_to "Edit", edit_tool_path(@tool), {class: "search-button navbar-wagon-item navbar-wagon-button btn"}%>
+          <% end %>
+          <%= link_to 'Back', :back, {class: "search-button navbar-wagon-item navbar-wagon-button btn"} %>
         </div>
       </div>
     </div>
