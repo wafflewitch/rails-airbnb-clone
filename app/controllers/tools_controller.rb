@@ -13,6 +13,7 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     @user = User.find(@tool[:user_id])
+    @tool_coordinates = { lat: @user.lat, lng: @user.long }
   end
 
   def index

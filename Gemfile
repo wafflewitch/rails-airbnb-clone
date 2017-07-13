@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.0.3'
 gem 'redis'
 gem 'faker'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

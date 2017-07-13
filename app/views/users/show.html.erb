@@ -4,7 +4,7 @@
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12 avatar-profile">
       <div class="text-center">
-        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <% avatar_url = current_user.facebook_picture_url || current_user.photo %>
         <%= image_tag avatar_url, class: "avatar avatar-xlarge" %>
       </div>
 
