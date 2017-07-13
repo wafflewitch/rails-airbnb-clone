@@ -10,7 +10,7 @@
          <div class="card-description-show">
           <h2>Booking details</h2>
           <p>You rented <%= @tool.title %></p>
-          <p>from <%= @booking.start_time.strftime('%b%_d') %> to <%= @booking.end_time.strftime('%b%_d') %></p>
+          <p>from <%= @booking.start_time %> to <%= @booking.end_time %></p>
           <p>for <%= @tool.price %> per day</p>
            <%= link_to 'Back', :back, {class: "search-button"} %>
         </div>

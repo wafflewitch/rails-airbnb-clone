@@ -3,40 +3,24 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8">
-          <%= render 'shared/card' %>
+            <%= render 'shared/card' %>
         </div>
         <div class="col-xs-12 col-sm-4">
           <div class="card-show text-center card-description-show">
           <img class="avatar-medium" src="<%= current_user.photo %>">
-            <h2><%= @tool.title %></h2>
-            <p>"<%= @tool.description %>"</p>
-            <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "btn-rent" %>
-          </div>
-          </div>
-          <a class="card-link-show" href="" ></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card-show text-center card-description-show">
-        <img class="avatar-medium" src="<%= current_user.photo %>">
-          <h2><%= @tool.title %></h2>
-          <p>"<%= @tool.description %>"</p>
-          <% if @user != current_user %>
-            <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
-          <% else %>
-            <%= link_to "Edit", edit_tool_path(@tool), {class: "search-button navbar-wagon-item navbar-wagon-button btn"}%>
-          <% end %>
-          <%= link_to 'Back', :back, {class: "search-button navbar-wagon-item navbar-wagon-button btn"} %>
+            <h2 class="before"><%= @tool.title %></h2>
+            <p class="before"><%= @tool.description %>"</p>
+            <% if @user != current_user %>
+              <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "search-button navbar-wagon-item navbar-wagon-button btn before" %>
 
+            <% else %>
+              <%= link_to "Edit", edit_tool_path(@tool), {class: "search-button navbar-wagon-item navbar-wagon-button btn"}%>
+              <%= link_to "Destroy", tool_path(@tool), method: :delete, class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
+            <% end %>
+            <%= link_to 'Back', :back, {class: "search-button navbar-wagon-item navbar-wagon-button btn"} %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="wrapper-tools-reviews">
-  <div class="container">
-    <h3>Reviews</h3>
-  </div>
-</div>
-

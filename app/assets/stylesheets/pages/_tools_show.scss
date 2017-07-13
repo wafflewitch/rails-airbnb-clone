@@ -76,6 +76,14 @@
   margin-left: 30px;
 }
 
+.card-description {
+  text-shadow: 1px 1px $green;
+  h2 {
+    margin: 0px;
+    opacity: 0.9;
+  }
+}
+
 .card-user-show {
   position: absolute;
   left: 15px;
@@ -83,10 +91,17 @@
 }
 .card-price-show {
   position: absolute;
-  right: 15px;
-  bottom: 10px;
-  opacity: 0.9;
-  border-radius: 10px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 1;
+  background-color: $green;
+  border-radius: 2px 0px 0px 0px;
+  h3 {
+    font-size: 15px;
+    padding: 7px;
+    margin: 0px;
+    text-shadow: none;
+  }
 }
 .card-stars {
   position: absolute;

@@ -7,10 +7,9 @@
           <div class="card-price-show">
             <h3>$<%= tool.price %>/day</h3>
           </div>
-          <div class="card-category"><%= tool.category %></div>
+          <div class="card-category"><%= tool.tags.sample %></div>
           <div class="card-description">
             <h2><%= tool.title %></h2>
-            <p><%= tool.description %></p>
           </div>
           <%= link_to "", tool_path(tool), {class: "card-link"} %>
         </div>

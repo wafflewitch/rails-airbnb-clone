@@ -47,7 +47,7 @@
     <% @tools.each do |tool| %>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/200/200/nature');">
-          <div class="card-category"><%= tool.category %></div>
+          <div class="card-category"><%= tool.tags.sample %></div>
           <div class="card-description">
             <h2><%= tool.title %></h2>
             <p><%= tool.description %></p>
