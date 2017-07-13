@@ -5,7 +5,8 @@
     <%= f.input :category, as: :select, collection: Tool::CATEGORIES, include_blank: "Select a category" %>
     <%= f.input :price %>
     <%= f.input :photo %>
-    <%= f.submit "New tool" %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Create Listing" %>
   <% end %>
   <%= link_to 'Back', tools_path %>
 </div>

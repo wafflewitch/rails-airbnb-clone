@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     @tools = Tool.where(user_id: current_user.id)
   end
 
+  def photo_url
+    avatar_url = "http://res.cloudinary.com/wafflewitch/image/upload/c_scale,h_50,r_50,w_50/v1499912601/userpic.jpg"
+  end
+
   def update
     @user.update_without_password(editable_user_params)
     redirect_to users_path
@@ -48,5 +52,3 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
-
-# @user = User.new(first_name: "Jessica", last_name: "Waffles", address: "30 Cat bouevard", email: "waffles@cat.com")
