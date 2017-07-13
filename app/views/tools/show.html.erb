@@ -18,6 +18,7 @@
           <h2><%= @tool.title %></h2>
           <p>"<%= @tool.description %>"</p>
           <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "btn-rent" %>
+          <%= link_to 'Back', :back, {class: "button button-md"} %>
         </div>
       </div>
     </div>
@@ -40,3 +41,4 @@
     </ul>
   </div>
 </div>
+
