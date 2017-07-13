@@ -8,6 +8,7 @@
             <div class="card-description">
               <h4><%= booking.start_time.strftime('%b%_d') %> - <%= booking.end_time.strftime('%b%_d') %></h4>
             </div>
+            <%= link_to "", tool_booking_path(booking.tool, booking), {class: "card-link"} %>
         </div>
       </div>
     <% end %>
