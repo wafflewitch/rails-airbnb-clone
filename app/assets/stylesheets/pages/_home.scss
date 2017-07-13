@@ -3,9 +3,13 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 .wrapper-categories {
-  margin: 50px;
+  background-size: cover;
   div.container h4 {
     font-size: 20px;
+  }
+  h1 {
+    color: $darkblue;
+    padding: 20px 0;
   }
 }
 
@@ -15,6 +19,8 @@
   background-size: cover !important;
   color: white;
   position: relative;
+  p {
+  }
 }
 
 .card-description-home {
