@@ -25,7 +25,7 @@ class ToolsController < ApplicationController
 
   def search_title
      @tools = if params[:title]
-      Tool.where('title LIKE ?', "%#{params[:title]}%")
+      Tool.where('title iLIKE ?', "%#{params[:title]}%")
     else
       Tool.all
     end
