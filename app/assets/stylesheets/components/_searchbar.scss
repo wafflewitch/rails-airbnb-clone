@@ -1,19 +1,25 @@
 input {
   padding: 7px;
   width: 400px;
+  height: 49px;
+  border-radius: 5px;
 }
 
-.search-form-home{
+input.search-form-home{
   height: 30px;
   margin: none;
+  border: none;
 }
 
 .search-by-tool-input{
-  height: 43px;
+  height: 49px;
+  border-radius: 5px;
+  border: none;
 }
 
 .search-by-location-input{
   height: 43px;
+
 }
 
 #for_index_page{
