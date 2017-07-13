@@ -13,7 +13,6 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     @user = User.find(@tool[:user_id])
-
   end
 
   def index

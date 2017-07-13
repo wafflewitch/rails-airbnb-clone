@@ -62,6 +62,16 @@
   box-shadow: none;
   width: 470px;
 }
+
+.form-control[disabled] {
+    background-color: white;
+    border-color: white;
+    border-bottom-color: #a8a8a8;
+}
+
+
+
+
 .btn {
   border-color: gray;
 }
