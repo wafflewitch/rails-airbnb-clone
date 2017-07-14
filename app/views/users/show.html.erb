@@ -1,19 +1,13 @@
 <div class="container" style="padding-top: 30px;">
-  <h1 class="page-header">My Profile</h1>
+  <h1 class="page-header">Profile</h1>
   <div class="row ">
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12 avatar-profile">
       <div class="text-center">
-        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <% avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
         <%= image_tag avatar_url, class: "avatar avatar-xlarge" %>
       </div>
-
-
-        <div id="new-photo-upload hide-password" >
-          <h6 class="text-center">Upload a different photo...</h6>
-          <input type="file" class="text-center center-block well well-sm photo-uploader">
-        </div>
-      </div>
+    </div>
 
 
 
@@ -25,7 +19,7 @@
       </div>
     </div>
     <div class="profile-tools-header">
-      <h2 class="page-header inline-block ">My Tools<%= link_to "", new_tool_path, class: "btn btn-default plus-btn fa fa-plus", title: "Edit"%></h2>
+      <h2 class="page-header inline-block ">Things I Own</h2>
     </div>
   </div>
 </div>
