@@ -17,5 +17,12 @@
 @import "pages/tools_show";
 @import "pages/bookings_new";
 @import "pages/bookings_index";
+@import "pages/bookings_show";
 @import "users/new";
 @import "users/login";
+
+#back-link {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}

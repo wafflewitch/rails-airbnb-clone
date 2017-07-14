@@ -1,0 +1,27 @@
+#container-bookings-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#card-bookings-show {
+  margin: 10px;
+  width: 700px;
+}
+
+#info-bookings-show {
+  margin: 10px;
+  width: 500px;
+  text-align: center;
+}
+
+#info-bookings-show h2 {
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+#info-bookings-show p {
+  font-size: 20px;
+}
