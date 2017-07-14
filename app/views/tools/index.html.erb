@@ -27,7 +27,9 @@
   <% end %>
 <% end %>
 -->
-
+<div class="container tool-index-header">
+  <p><%= @tools.count %> results for "<%= params[:title] %>"</p>
+</div>
 <div class="container">
   <div class="row">
     <% @tools.each do |tool| %>
