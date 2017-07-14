@@ -1,33 +1,54 @@
-<div class="container">
-  <div class="wrapper-tools-show">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8">
-            <%= render 'shared/card' %>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card-show text-center card-description-show">
-          <%= link_to user_path(@user) do %>
-            <% avatar_url = @user.facebook_picture_url || @user.photo %>
-            <%= image_tag avatar_url, class: "avatar-medium" %>
-          <% end %>
-            <h2 class="before"><%= @tool.title %></h2>
-            <p class="before"><%= @tool.description %></p>
-            <% if @user != current_user %>
-              <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn before" %>
+<div class="wrapper-tools-show">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <%= render 'shared/card' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-show text-center card-description-show">
+          <% if @user != current_user %>
+            <%= link_to user_path(current_user) do %>
+              <% avatar_url = @user.facebook_picture_url || @user.photo %>
+              <%= image_tag avatar_url, class: "avatar-medium" %>
 
-            <% else %>
-              <%= link_to "Edit", edit_tool_path(@tool), {class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn"}%>
-              <%= link_to "Destroy", tool_path(@tool), method: :delete, class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn" %>
             <% end %>
-            <%= link_to 'Back', :back, {class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn"} %>
-          </div>
+            <h2 class="before"><%= @user.first_name %>'s <%= @tool.title %></h2>
+            <p class="before">"<%= @tool.description %>"</p>
+            <hr>
+            <%= link_to "Request to Rent", new_tool_booking_path(@tool), class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn before edit" %>
+
+
+          <% else %>
+            <%= link_to "Edit", edit_tool_path(@tool), {class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn edit"}%>
+            <p><%= link_to "Remove", tool_path(@tool), method: :delete, class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn before edit destroy" %></p>
+          <% end %>
+          <p><%= link_to 'Back', :back, {class: "non-button-link"} %><p>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div id="map-tool-show" style="width: 66%; height: 250px; margin-left: 280px; border-radius: 3px;"></div>
+
+<div class="wrapper-reviews">
+  <div class="container text-center">
+    <h1 class="text-center"><strong>Reviews</strong></h1>
+    <%= render 'shared/page_break_icon' %>
+    <% avatar_url = @user.facebook_picture_url || @user.photo %>
+    <ul class="list-reviews">
+      <li><p>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </p>
+
+    </ul>
+    <h4>"I loved using this and it was in great condition"</h4>
+  </div>
+</div>
+
+<div id="map-tool-show" style="width: 100%; height: 250px"></div>
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {

@@ -12,6 +12,9 @@
   padding: 10px 30px;
   border-radius: 3px;
   transition: all .3s ease;
+  &:hover {
+    color: white;
+  }
 }
 
 .new-booking-button {
@@ -19,3 +22,30 @@
   padding-left: 21px;
   margin-top: 15px;
 }
+
+.search-button.edit {
+  width: 250px;
+  height: 60px;
+  font-size: 24px;
+  vertical-align: center;
+  text-shadow: none;
+
+}
+
+.tools-show-buttons {
+  margin-left: 0px !important;
+  padding-top: 15px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.search-button.destroy {
+    border-color: gray;
+    color: gray;
+    background-color: transparent;
+    margin-top: 10px;
+    &:hover {
+      background-color: gray;
+      color: white;
+    }
+  }
