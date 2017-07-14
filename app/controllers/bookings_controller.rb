@@ -4,10 +4,12 @@ class BookingsController < ApplicationController
   before_action :set_tool, only: [ :new ]
 
   def index
+    @disable_nav = true
     @bookings = Booking.where(user_id: current_user)
   end
 
   def show
+    @disable_nav = true
     @tool = Tool.find(params[:tool_id])
     @user = User.find(@tool[:user_id])
     @booking.tool = @tool
@@ -18,10 +20,12 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @disable_nav = true
     @booking = Booking.new
   end
 
   def create
+    @disable_nav = true
     @tool = Tool.find(params[:tool_id])
     @booking = Booking.new(booking_params)
     @booking.tool = @tool
@@ -31,9 +35,11 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @disable_nav = true
   end
 
   def update
+    @disable_nav = true
     @booking.update(booking_params)
     redirect_to user_bookings_path(current_user)
   end

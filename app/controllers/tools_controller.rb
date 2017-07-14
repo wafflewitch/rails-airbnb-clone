@@ -4,10 +4,12 @@ class ToolsController < ApplicationController
   before_action :set_user, only: [ :new, :create, :index ]
 
   def new
+    @disable_nav = true
     @tool = Tool.new
   end
 
   def edit
+    @disable_nav = true
   end
 
   def show

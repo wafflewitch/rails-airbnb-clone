@@ -4,10 +4,12 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [ :show ]
 
   def new
+    @disable_nav = true
     @review = Review.new
   end
 
   def create
+    @disable_nav = true
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
@@ -18,9 +20,11 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @disable_nav = true
   end
 
   def index
+    @disable_nav = true
     @reviews = Review.where(booking_id: @booking.id)
   end
 
