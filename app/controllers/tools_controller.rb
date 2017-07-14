@@ -13,7 +13,10 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     @user = User.find(@tool[:user_id])
-    @tool_coordinates = { lat: @user.latitude, lng: @user.longitude }
+    @hash = Gmaps4rails.build_markers(@tool) do |tool, marker|
+        marker.lat tool.user.latitude if !tool.user.latitude.nil?
+        marker.lng tool.user.longitude if !tool.user.longitude.nil?
+    end
   end
 
   def index
