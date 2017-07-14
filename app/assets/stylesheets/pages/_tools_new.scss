@@ -17,6 +17,11 @@
   margin-left: 0px;
 }
 
-.tools-show-buttons {
-  margin-left: -15px;
+.checkbox {
+  label {
+    input {
+      height: 17px;
+      width: 17px;
+    }
+  }
 }

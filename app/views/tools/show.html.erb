@@ -10,6 +10,7 @@
             <%= link_to user_path(current_user) do %>
               <% avatar_url = @user.facebook_picture_url || @user.photo %>
               <%= image_tag avatar_url, class: "avatar-medium" %>
+
             <% end %>
             <h2 class="before"><%= @user.first_name %>'s <%= @tool.title %></h2>
             <p class="before">"<%= @tool.description %>"</p>

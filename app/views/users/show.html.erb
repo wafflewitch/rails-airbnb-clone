@@ -21,10 +21,12 @@
     <div class="profile-tools-header">
       <h2 class="page-header inline-block ">Tools</h2>
     </div>
+    <div class="row">
+      <%= render "/shared/tools_display", :collections => {:tools => @tools } %>
+    </div>
   </div>
 </div>
 
-<%= render "/shared/tools_display", :collections => {:tools => @tools } %>
 
 
 

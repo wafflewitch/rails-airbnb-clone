@@ -2,7 +2,10 @@
   <div class="banner-content text-center">
     <h1>ShedShare</h1>
     <h2>Need tools for your next project? Rent from your neighbors!</h2>
-    <a href="/users/signup"><p>(Sign up and start renting your tools today)</p></a>
+    <% if user_signed_in? %>
+    <% else %>
+      <a href="/users/signup"><p>(Sign up and start renting your tools today)</p></a>
+    <% end  %>
 
     <%= render 'shared/searchbar'  %>
   </div>
