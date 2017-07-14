@@ -137,3 +137,10 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+#searchbar{
+  position: fixed;
+  top: -25px;
+  left: 493px;
+  z-index: 3;
+}
