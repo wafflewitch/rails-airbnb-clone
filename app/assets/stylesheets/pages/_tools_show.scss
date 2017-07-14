@@ -155,5 +155,8 @@
   margin-top: 10px;
   color: $blue;
   opacity: 0.8;
+  &.remove {
+    color: red;
+  }
 }
 
