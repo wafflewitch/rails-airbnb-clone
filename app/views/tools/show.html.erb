@@ -12,7 +12,7 @@
             <%= image_tag avatar_url, class: "avatar-medium" %>
           <% end %>
             <h2 class="before"><%= @tool.title %></h2>
-            <p class="before"><%= @tool.description %>"</p>
+            <p class="before"><%= @tool.description %></p>
             <% if @user != current_user %>
               <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn before" %>
 
