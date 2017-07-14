@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
   has_many :tools, dependent: :destroy
+  has_many :bookings
   mount_uploader :photo, PhotoUploader
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

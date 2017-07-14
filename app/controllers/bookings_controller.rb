@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:tool_id])
+    @user = User.find(@tool[:user_id])
     @booking.tool = @tool
     @hash = Gmaps4rails.build_markers(@tool) do |tool, marker|
         marker.lat tool.user.latitude if !tool.user.latitude.nil?
