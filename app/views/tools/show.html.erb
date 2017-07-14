@@ -7,17 +7,20 @@
         </div>
         <div class="col-xs-12 col-sm-4">
           <div class="card-show text-center card-description-show">
-          <img class="avatar-medium" src="<%= current_user.photo %>">
+          <%= link_to user_path(current_user) do %>
+            <% avatar_url = @user.facebook_picture_url || @user.photo %>
+            <%= image_tag avatar_url, class: "avatar-medium" %>
+          <% end %>
             <h2 class="before"><%= @tool.title %></h2>
             <p class="before"><%= @tool.description %>"</p>
             <% if @user != current_user %>
-              <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "search-button navbar-wagon-item navbar-wagon-button btn before" %>
+              <%= link_to "Rent it!", new_tool_booking_path(@tool), class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn before" %>
 
             <% else %>
-              <%= link_to "Edit", edit_tool_path(@tool), {class: "search-button navbar-wagon-item navbar-wagon-button btn"}%>
-              <%= link_to "Destroy", tool_path(@tool), method: :delete, class: "search-button navbar-wagon-item navbar-wagon-button btn" %>
+              <%= link_to "Edit", edit_tool_path(@tool), {class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn"}%>
+              <%= link_to "Destroy", tool_path(@tool), method: :delete, class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn" %>
             <% end %>
-            <%= link_to 'Back', :back, {class: "search-button navbar-wagon-item navbar-wagon-button btn"} %>
+            <%= link_to 'Back', :back, {class: "tools-show-buttons search-button navbar-wagon-item navbar-wagon-button btn"} %>
           </div>
         </div>
       </div>

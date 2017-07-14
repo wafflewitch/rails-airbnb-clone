@@ -40,8 +40,6 @@
           <div class="card-description">
             <h2><%= tool.title %></h2>
           </div>
-          <img <% avatar_url = current_user.facebook_picture_url || current_user.photo %>
-      <%= image_tag avatar_url, class: "avatar-search-page avatar card-user" %>
           <%= link_to "", tool_path(tool), {class: "card-link"} %>
         </div>
       </div>
