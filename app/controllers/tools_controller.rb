@@ -32,10 +32,14 @@ class ToolsController < ApplicationController
   end
 
   def search_category
-    @tools = if params[:tags]
-    Tool.where(tags: params[:tags])
+    if params[:category]
+      filtered = []
+      Tool.all.each do |tool|
+        filtered << tool if tool.tags.include? params[:category]
+      end
+      @tools = filtered
     else
-      Tool.all
+      @tools = Tool.all
     end
   end
 
