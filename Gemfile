@@ -10,6 +10,13 @@ gem 'puma'
 gem 'rails', '5.0.3'
 gem 'redis'
 gem 'faker'
+gem 'geocoder'
+gem 'coffee-rails'
+gem 'gmaps4rails'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -21,7 +28,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'better_errors'
