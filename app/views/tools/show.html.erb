@@ -1,6 +1,3 @@
-
-      <div id="map-tool-show" style="width: 100%; height: 250px"></div>
-
 <div class="wrapper-tools-show">
   <div class="container">
     <div class="row">
@@ -27,10 +24,20 @@
           <p><%= link_to 'Back', :back, {class: "non-button-link"} %><p>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+
+<div class="wrapper-reviews">
+  <div class="container text-center">
+    <h1 class="text-center"><strong>Reviews</strong></h1>
+    <%= render 'shared/page_break_icon' %>
+
+  </div>
+</div>
+
+<div id="map-tool-show" style="width: 100%; height: 250px"></div>
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
