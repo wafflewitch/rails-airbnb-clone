@@ -1,4 +1,5 @@
 <% @tools = Tool.where(user_id: current_user.id) %>
+<% @bookings = Booking.where(user_id: current_user.id) %>
 <% @editable = true %>
 
 <div class="container" style="padding-top: 30px;">
@@ -24,13 +25,23 @@
         <%= render "/shared/user_form", :locals => {:editable => false} %>
       </div>
     </div>
+  </div>
     <div class="profile-tools-header">
       <h2 class="page-header inline-block ">My Tools<%= link_to "", new_tool_path, class: "btn btn-default plus-btn fa fa-plus", title: "Edit"%></h2>
+    </div>
+    <div class="row">
+      <%= render "/shared/tools_display", :collections => {:tools => @tools } %>
+    </div>
+  <div class="row">
+    <div class="profile-bookings-header">
+      <h2 class="page-header inline-block ">My Bookings</h2>
+    </div>
+    <div ="row">
+      <%= render "/shared/bookings_display", :collections => {:bookings => @bookings } %>
     </div>
   </div>
 </div>
 
-<%= render "/shared/tools_display", :collections => {:tools => @tools } %>
 
 
 

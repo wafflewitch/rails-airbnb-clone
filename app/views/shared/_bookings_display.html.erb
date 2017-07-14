@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+        <% image_url = booking.tool.photo || 'http://placehold.it/50x300' %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_url %>');">
+          <div class="card-price-show">
+            <h3>$<%= booking.tool.price %>/day</h3>
+          </div>
+          <div class="card-description">
+            <h2><%= booking.tool.title %></h2>
+          </div>
+          <%= link_to "", tool_booking_path(booking.tool, booking), {class: "card-link"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
