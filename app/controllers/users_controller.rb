@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user == current_user
       redirect_to edit_user_registration_path
     end
-    @tools = Tool.where(user_id: current_user.id)
+    @tools = Tool.where(user_id: params[:id])
   end
 
   def photo_url
@@ -20,8 +20,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update_without_password(editable_user_params)
-    redirect_to users_path
+    @user.update(user_params)
+    redirect_to user_path
   end
 
   def create
@@ -44,9 +44,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :first_name, :last_name, :address, :bio, :photo, :photo_cache)
   end
 
-  def editable_params
-    params.require(:user).permit(:first_name, :last_name, :address, :email)
-  end
 
   def set_user
     @user = User.find(params[:id])
