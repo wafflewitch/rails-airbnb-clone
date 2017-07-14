@@ -13,13 +13,23 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     @user = User.find(@tool[:user_id])
+    @hash = Gmaps4rails.build_markers(@tool) do |tool, marker|
+        marker.lat tool.user.latitude if !tool.user.latitude.nil?
+        marker.lng tool.user.longitude if !tool.user.longitude.nil?
+    end
   end
 
   def index
     if !params[:title].nil?
-      search_title
+      @tools = search_title
     else
-      search_category
+      @tools = search_category
+    end
+
+    @hash = Gmaps4rails.build_markers(@tools) do |tool, marker|
+        marker.lat tool.user.latitude if !tool.user.latitude.nil?
+        marker.lng tool.user.longitude if !tool.user.longitude.nil?
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
   end
 
@@ -32,10 +42,14 @@ class ToolsController < ApplicationController
   end
 
   def search_category
-    @tools = if params[:tags]
-    Tool.where(tags: params[:tags])
+    if params[:category]
+      filtered = []
+      Tool.all.each do |tool|
+        filtered << tool if tool.tags.include? params[:category]
+      end
+      @tools = filtered
     else
-      Tool.all
+      @tools = Tool.all
     end
   end
 
