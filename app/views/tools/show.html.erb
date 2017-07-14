@@ -33,7 +33,17 @@
   <div class="container text-center">
     <h1 class="text-center"><strong>Reviews</strong></h1>
     <%= render 'shared/page_break_icon' %>
+    <% avatar_url = @user.facebook_picture_url || @user.photo %>
+    <ul class="list-reviews">
+      <li><p>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </p>
 
+    </ul>
+    <h4>"I loved using this and it was in great condition"</h4>
   </div>
 </div>
 
