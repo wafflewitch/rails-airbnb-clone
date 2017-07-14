@@ -25,7 +25,26 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    "http://res.cloudinary.com/wafflewitch/image/upload/v1499912601/userpic.jpg"
+    ["http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user0.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user1.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user2.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user3.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user4.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user5.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user6.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user7.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user8.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user9.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user10.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user11.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user12.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user13.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user14.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user15.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user16.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user17.jpg",
+      "http://res.cloudinary.com/wafflewitch/image/upload/v1500038735/user18.jpg"
+      ].sample
   end
 
   # Process files as they are uploaded:
