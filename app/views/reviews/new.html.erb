@@ -1,9 +1,15 @@
-<div class="container">
-  <%= simple_form_for(@review) do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating %>
-  <%= f.submit "New review" %>
-<% end %>
-
-  <%= link_to 'Back', reviews_path(@review) %>
-</div>
+<div class="wrapper-tool-add">
+  <div class="container">
+    <div class="new-tool-box">
+        <%= simple_form_for [@tool, @booking, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating, collection: 1..5 %>
+      <div class="text-center">
+          <%= f.submit "Publish Review", class: "create-listing-button search-button navbar-wagon-item navbar-wagon-button btn" %>
+        <% end %>
+        <br>
+        <br>
+        <%= link_to 'Back', :back %>
+      </div>
+    </div>
+  </div>

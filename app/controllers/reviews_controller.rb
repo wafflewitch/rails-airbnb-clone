@@ -4,14 +4,16 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [ :show ]
 
   def new
+    @tool = Tool.find(params[:tool_id])
     @review = Review.new
   end
 
   def create
+    @tool = Tool.find(params[:tool_id])
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to booking_path(@booking) # maybe change later??
+      redirect_to tool_path(@tool.id) # maybe change later??
     else
       render :new
     end
