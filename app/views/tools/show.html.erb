@@ -7,7 +7,7 @@
         </div>
         <div class="col-xs-12 col-sm-4">
           <div class="card-show text-center card-description-show">
-          <%= link_to user_path(current_user) do %>
+          <%= link_to user_path(@user) do %>
             <% avatar_url = @user.facebook_picture_url || @user.photo %>
             <%= image_tag avatar_url, class: "avatar-medium" %>
           <% end %>
