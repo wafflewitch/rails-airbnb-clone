@@ -1,16 +1,18 @@
-<div class="wrapper-tools-show">
-  <div class="container" id="container-bookings-show">
-    <div class="card-show" id="card-bookings-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @tool.photo %>');">
-    </div>
-       <div class="card-description-show" id="info-bookings-show">
-        <h2>Booking Details</h2><br>
-        <p><%= @tool.title %></p>
-        <p><%= @booking.start_time.strftime("%b %e") %> - <%= @booking.end_time.strftime("%b %e") %></p>
-        <p>$<%= @tool.price %> per day</p><br>
-        <%= link_to 'Write Review', new_tool_booking_review_path(@tool, @booking), { class: "search-button navbar-wagon-item navbar-wagon-button btn" } %>
-        <br><br>
-        <p><%= link_to 'Back', :back, { id: "back-link" } %></p>
+<div class="container">
+  <div class="wrapper-tools-show">
+    <div class="container" id="container-bookings-show">
+      <div class="card-show" id="card-bookings-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @tool.photo %>');">
       </div>
+         <div class="card-description-show" id="info-bookings-show">
+          <h2>Booking Details</h2><br>
+          <p><%= @tool.title %></p>
+          <p><%= @booking.start_time.strftime("%b %e") %> - <%= @booking.end_time.strftime("%b %e") %></p>
+          <p>$<%= @tool.price %> per day</p><br>
+          <%= link_to 'Write Review', new_tool_booking_review_path(@tool, @booking), { class: "search-button navbar-wagon-item navbar-wagon-button btn" } %>
+          <br><br>
+          <p><%= link_to 'Back', :back, { id: "back-link" } %></p>
+        </div>
+    </div>
   </div>
 </div>
 <div id="map-bookings-show" style="width: 100%; height: 400px;"></div>
